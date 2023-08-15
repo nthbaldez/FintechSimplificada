@@ -3,7 +3,6 @@ package com.fintechsimplificada.controllers;
 import com.fintechsimplificada.domain.transaction.Transaction;
 import com.fintechsimplificada.dtos.TransactionDTO;
 import com.fintechsimplificada.services.TransactionService;
-import org.apache.coyote.Response;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
