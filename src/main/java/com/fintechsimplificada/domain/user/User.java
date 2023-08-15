@@ -1,10 +1,8 @@
 package com.fintechsimplificada.domain.user;
 
+import com.fintechsimplificada.dtos.UserDTO;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 import java.math.BigDecimal;
 
@@ -13,6 +11,7 @@ import java.math.BigDecimal;
 @Getter
 @Setter
 @AllArgsConstructor
+@NoArgsConstructor
 @EqualsAndHashCode(of="id")
 public class User {
     @Id
@@ -33,4 +32,14 @@ public class User {
 
     @Enumerated(EnumType.STRING)
     private UserType userType;
+
+    public User(UserDTO userData) {
+        this.firstName = userData.firstName();
+        this.lastName = userData.lastName();
+        this.balance = userData.balance();
+        this.userType = userData.userType();
+        this.password = userData.password();
+        this.email = userData.email();
+        this.document = userData.document();
+    }
 }
