@@ -2,6 +2,7 @@ package com.fintechsimplificada.controllers;
 
 import com.fintechsimplificada.domain.user.User;
 import com.fintechsimplificada.dtos.UserDTO;
+import com.fintechsimplificada.repositories.UserRepository;
 import com.fintechsimplificada.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -13,7 +14,6 @@ import java.util.List;
 @RestController()
 @RequestMapping("/users")
 public class UserController {
-
     @Autowired
     private UserService userService;
 

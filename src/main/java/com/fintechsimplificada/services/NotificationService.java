@@ -19,7 +19,7 @@ public class NotificationService {
 
         String url = "http://o4d9z.mocklab.io/notify";
         ResponseEntity<String> notificationResponse = restTemplate.postForEntity(url, notificationRequest, String.class);
-
+        System.out.println(notificationResponse.getStatusCode());
         if (!(notificationResponse.getStatusCode() == HttpStatus.OK)) {
             System.out.println("Erro ao enviar notificação");
             throw new Exception("Serviço de notificação está fora do ar!");
