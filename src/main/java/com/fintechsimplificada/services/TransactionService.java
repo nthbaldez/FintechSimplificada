@@ -32,7 +32,7 @@ public class TransactionService {
         User sender = this.userService.findUserById(transaction.senderId());
         User receiver = this.userService.findUserById(transaction.receiverId());
 
-        userService.validateTransaction(sender, transaction.value());
+        this.userService.validateTransaction(sender, transaction.value());
 
         boolean isAuthorized = this.handleAuthorizeTransaction(sender, transaction.value());
 
